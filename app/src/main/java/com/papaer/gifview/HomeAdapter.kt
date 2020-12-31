@@ -1,6 +1,7 @@
 package com.papaer.gifview
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,9 +38,10 @@ public class HomeAdapter(var context:Context,var alldata: Alldata,var  mGifLoadi
 //            .apply(requestOptions)
 //            .thumbnail(Glide.with(context).load(imageUrl))
             .into(holder.ImageButton)
-//        holder.ImageButton.setOnClickListener {
-//            mGifLoadingView.setalldata.data.get(position).origin.image.toString())
-//            mGifLoadingView.show(context)
-//        }
+        holder.ImageButton.setOnClickListener {
+           var intent= Intent(context,FullView::class.java)
+            intent.putExtra("urlimg",alldata.data.get(position).images.original.url)
+            context.startActivity(intent)
+        }
     }
 }

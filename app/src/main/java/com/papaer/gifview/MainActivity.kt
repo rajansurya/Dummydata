@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
 
         mRecyclerView =  findViewById(R.id.id_recyclerview)
         mRecyclerView?.layoutManager = GridLayoutManager(this,3)
+       var div= SpacesItemDecoration(3)//DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL)
+        mRecyclerView?.addItemDecoration(div)
+
+
 
     }
 
